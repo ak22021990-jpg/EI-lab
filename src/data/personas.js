@@ -1,0 +1,88 @@
+// 8 personas from the PRD — reused across mini-games for familiarity
+
+export const personas = [
+  {
+    id: 'rahul-sharma',
+    name: 'Rahul Sharma',
+    tag: 'Frequent Applicant',
+    region: 'India',
+    role: 'SDE I',
+    context: 'Has applied multiple times across different roles and locations',
+    color: '#FF9900',
+    initials: 'RS',
+  },
+  {
+    id: 'jason-miller',
+    name: 'Jason Miller',
+    tag: 'Experienced Hire',
+    region: 'USA',
+    role: 'Sr. Operations Manager',
+    context: 'Claims 12+ years of leadership experience in logistics',
+    color: '#00d4ff',
+    initials: 'JM',
+  },
+  {
+    id: 'priya-nair',
+    name: 'Priya Nair',
+    tag: 'Career Switcher',
+    region: 'India',
+    role: 'Business Analyst',
+    context: 'Recently transitioned from teaching to tech industry',
+    color: '#a855f7',
+    initials: 'PN',
+  },
+  {
+    id: 'daniel-brooks',
+    name: 'Daniel Brooks',
+    tag: 'Former Employee',
+    region: 'Canada',
+    role: 'Area Manager',
+    context: 'Previously worked here and is reapplying after 2 years',
+    color: '#22c55e',
+    initials: 'DB',
+  },
+  {
+    id: 'ahmed-khan',
+    name: 'Ahmed Khan',
+    tag: 'Inconsistent Profile',
+    region: 'UAE',
+    role: 'Logistics Coordinator',
+    context: 'Data varies significantly across different sources',
+    color: '#ef4444',
+    initials: 'AK',
+  },
+  {
+    id: 'emily-chen',
+    name: 'Emily Chen',
+    tag: 'Multi-Role Professional',
+    region: 'USA',
+    role: 'Program Manager',
+    context: 'Has held multiple roles across different companies simultaneously',
+    color: '#f59e0b',
+    initials: 'EC',
+  },
+  {
+    id: 'michael-johnson',
+    name: 'Michael Johnson',
+    tag: 'Repeat Applicant',
+    region: 'UK',
+    role: 'Warehouse Associate',
+    context: 'Has submitted applications with different personal details each time',
+    color: '#3b82f6',
+    initials: 'MJ',
+  },
+  {
+    id: 'ankit-verma',
+    name: 'Ankit Verma',
+    tag: 'Early Career',
+    region: 'India',
+    role: 'Operations Executive',
+    context: 'Limited professional experience, fresh out of college',
+    color: '#06b6d4',
+    initials: 'AV',
+  },
+];
+
+export function getPersona(id) {
+  return personas.find(p => p.id === id);
+}
