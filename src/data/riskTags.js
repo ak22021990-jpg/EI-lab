@@ -9,4 +9,6 @@ export const riskTags = [
   { id: 'data-conflict', label: 'Source Conflict', icon: 'fa-code-compare' },
   { id: 'timeline', label: 'Timeline Gap', icon: 'fa-timeline' },
   { id: 'managerial', label: 'Managerial Claim', icon: 'fa-user-tie' },
+  { id: 'location', label: 'Location Mismatch', icon: 'fa-map-marker-alt' },
+  { id: 'visa', label: 'Visa Eligibility', icon: 'fa-passport' },
 ];

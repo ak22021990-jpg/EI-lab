@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dashboard from './components/Dashboard';
+import CommandCenter from './components/CommandCenter';
 import AuditGame from './components/AuditGame';
 import Results from './components/Results';
 import { scoreAuditScenario, getRank } from './utils/scoring';
@@ -99,6 +100,9 @@ const App = () => {
     setCurrentGame(null);
   };
 
+  const handleEnterCommandCenter = () => {
+    setScreen('COMMAND_CENTER');
+  };
   if (screen === 'LOADING') {
     return (
       <div className="min-h-screen bg-brand-navy flex flex-col items-center justify-center p-8">
@@ -144,6 +148,7 @@ const App = () => {
           <Dashboard 
             onStartGame={handleStartMiniGame} 
             onStartInvestigation={handleStartInvestigation}
+            onEnterCommandCenter={handleEnterCommandCenter}
             stats={stats}
           />
         )}
@@ -156,12 +161,16 @@ const App = () => {
           />
         )}
 
-        {screen === 'RESULTS' && (
-          <Results 
-            results={results} 
-            onRestart={handleRestart} 
-          />
-        )}
+          {screen === 'RESULTS' && (
+            <Results 
+              results={results} 
+              onRestart={handleRestart} 
+            />
+          )}
+
+          {screen === 'COMMAND_CENTER' && (
+            <CommandCenter onStart={handleStartInvestigation} />
+          )}
       </main>
 
       {/* Footer */}

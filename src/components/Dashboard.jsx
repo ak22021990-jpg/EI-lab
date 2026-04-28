@@ -1,16 +1,16 @@
 import React from 'react';
-import { miniGames, investigationRoom } from '../data/day4Games';
+import { miniGames, investigationRoom } from '../data/day5Games';
 
-const Dashboard = ({ onStartGame, onStartInvestigation, stats }) => {
+const Dashboard = ({ onStartGame, onStartInvestigation, onEnterCommandCenter, stats }) => {
   return (
     <div className="max-w-6xl mx-auto animate__animated animate__fadeIn">
       {/* Header Section */}
       <div className="text-center mb-10">
         <h1 className="text-5xl font-black text-white mb-4 tracking-tighter uppercase italic">
-          Experience & <span className="text-brand-orange">Integrity Lab</span>
+          Day 5 <span className="text-brand-orange">Location & Visa Lab</span>
         </h1>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Welcome to Day 4 Training. Master the art of multi-source verification and fraud detection.
+          Welcome to Day 5 Training. Master the art of multi-source verification and fraud detection.
         </p>
       </div>
 
@@ -31,7 +31,7 @@ const Dashboard = ({ onStartGame, onStartInvestigation, stats }) => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Mini Games Column */}
+        {/* Day 5 Mini-Games Column */}
         <div className="lg:col-span-2 space-y-6">
           <div className="flex items-center gap-3 mb-4">
             <i className="fas fa-gamepad text-brand-orange text-xl"></i>
@@ -104,6 +104,21 @@ const Dashboard = ({ onStartGame, onStartInvestigation, stats }) => {
             </div>
           </button>
         </div>
+      </div>
+
+      {/* Final Screening Section */}
+      <div className="mt-12 text-center p-8 glass border-2 border-dashed border-brand-orange/30 rounded-2xl animate__animated animate__pulse animate__infinite animate__slow">
+        <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-widest">Ready for Final Certification?</h3>
+        <button
+          onClick={onEnterCommandCenter}
+          className="group relative overflow-hidden px-10 py-4 bg-brand-orange text-black font-black uppercase tracking-tighter rounded-xl shadow-[0_0_40px_rgba(255,153,0,0.3)] hover:scale-105 transition-all duration-300"
+        >
+          <span className="relative z-10 flex items-center gap-3">
+            Launch Final Screening Simulation
+            <i className="fas fa-rocket group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+          </span>
+          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
+        </button>
       </div>
     </div>
   );

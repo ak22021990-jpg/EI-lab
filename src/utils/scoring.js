@@ -64,8 +64,11 @@ export function scoreAuditScenario({
   // Correct tags
   for (const tag of correctRisks) {
     if (userRiskSet.has(tag)) {
-      points += 5;
-      breakdown.push({ label: `Identified risk: ${tag}`, points: 5 });
+      // Give extra points for location and visa risks on Day 5
+      const extra = (tag === 'location' || tag === 'visa') ? 2 : 0;
+      const pts = 5 + extra;
+      points += pts;
+      breakdown.push({ label: `Identified risk: ${tag}`, points: pts });
     } else {
       points -= 5;
       riskImpact += 25;
